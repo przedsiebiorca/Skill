@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <style>
+  body { margin: 0; background: #e8e4dc; font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, Helvetica, Arial, sans-serif; color: #1c1a17; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  a { color: #22402e; text-decoration: none; } a:hover { color: #163020; }
+  .page { font-size: 15.5px; font-variant-numeric: lining-nums; position: relative; width: 794px; height: 1123px; box-sizing: border-box; background: #f7f4ee; overflow: hidden; padding: 52px 56px 48px 56px; display: flex; flex-direction: column; }
+  .serif { font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; }
+  .eyebrow { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #22402e; font-weight: 600; }
+  .topbar { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 1px solid #22402e; }
+  .brand { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; font-weight: 600; letter-spacing: 0.04em; color: #22402e; }
+  .brand span { font-weight: 500; font-style: italic; }
+  .h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: 50px; line-height: 1.06; margin: 0; letter-spacing: -0.01em; text-wrap: pretty; }
+  .h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: 34px; line-height: 1.1; margin: 0; letter-spacing: -0.005em; }
+  .h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 22px; line-height: 1.2; margin: 0; }
+  .lead { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 21px; line-height: 1.4; font-style: italic; color: #3a3631; margin: 0; }
+  .body { font-size: inherit; line-height: 1.55; margin: 0; text-wrap: pretty; }
+  .small { font-size: 12px; line-height: 1.45; color: #5d5850; }
+  .rule { height: 1px; background: #d9d3c7; }
+  .photo { background: #dfe3d8; border: 1px solid #c9d0c1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #55634f; box-sizing: border-box; }
+  .photo .cap { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; }
+  .stat { display: flex; flex-direction: column; gap: 2px; }
+  .stat .v { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 34px; font-weight: 600; line-height: 1; color: #1c1a17; }
+  .stat .l { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #5d5850; }
+  .row { display: flex; justify-content: space-between; gap: 16px; padding: 7px 0; border-bottom: 1px solid #e4dfd4; font-size: 15px; line-height: 1.35; }
+  .row .n { flex: 1; } .row .a { font-weight: 500; white-space: nowrap; }
+  .row.sum { border-bottom: 0; border-top: 1px solid #22402e; font-weight: 600; margin-top: 4px; }
+  .check { display: flex; gap: 10px; align-items: flex-start; font-size: 14.5px; line-height: 1.4; }
+  .check svg { flex: none; margin-top: 3px; }
+  .box { background: #22402e; color: #f7f4ee; padding: 22px 26px; box-sizing: border-box; }
+  .box .eyebrow { color: #b9c9b4; }
+  .footer { margin-top: auto; padding-top: 12px; border-top: 1px solid #d9d3c7; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #5d5850; letter-spacing: 0.04em; }
+</style>
+</helmet>
+<div class="page">
+  <div class="topbar"><div class="brand">Lidzbarska <span>Nieruchomości</span></div><div class="small" style="letter-spacing: 0.1em; text-transform: uppercase;">Opis nieruchomości</div></div>
+  <div style="margin-top: 26px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+    <div class="photo" style="height: 136px; "><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#55634f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="1.5"></rect><circle cx="9" cy="10" r="1.6"></circle><path d="M21 16l-5-5-8 8"></path></svg><div class="cap">Zdjęcie 2 z oferty</div></div>
+    <div class="photo" style="height: 136px; "><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#55634f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="1.5"></rect><circle cx="9" cy="10" r="1.6"></circle><path d="M21 16l-5-5-8 8"></path></svg><div class="cap">Zdjęcie 3 z oferty</div></div>
+  </div>
+  <h2 class="h2" style="margin-top: 22px;">Są lokalizacje, których nie da się odtworzyć.</h2>
+  <div style="margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; font-size: 14.5px;">
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <p class="body">Nie dlatego, że są daleko od cywilizacji. Wręcz przeciwnie – pozwalają każdego dnia korzystać z bliskości natury, nie rezygnując z wygody miasta.</p>
+      <p class="body">Ten wyjątkowy dom położony jest w Sycowej Hucie, zaledwie ok. 7 minut od centrum Kościerzyny i ok. godziny od Gdańska. Od frontu oraz od strony prywatnego ogrodu i tarasu posesja graniczy z lasem, zapewniając mieszkańcom poczucie prywatności i zielony widok przez cały rok.</p>
+      <p class="body">Sycowa Huta leży w sercu Pojezierza Kaszubskiego. W najbliższym otoczeniu znajduje się pięć jezior – Sudomie, Mielnica, Żołnowo, Sominko i Osuszno – połączonych rzeką Trzebiochą, tworzących system wodny ceniony przez miłośników kajakarstwa, żeglarstwa i aktywnego wypoczynku.</p>
+      <p class="body">Dom został wykończony pod klucz i jest gotowy do zamieszkania. Nie wymaga dodatkowych nakładów ani czasu na wykończenie – od pierwszego dnia można cieszyć się jego komfortem.</p>
+      <h3 class="h3" style="margin-top: 8px;">Solidna technologia wykonania</h3>
+      <p class="body">Prefabrykacja betonowa daje wysoką trwałość, precyzję wykonania i bardzo dobrą izolacyjność akustyczną. Z pompą ciepła, rekuperacją i klimatyzacją tworzy energooszczędny dom na lata.</p>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom: 12px;">Najważniejsze informacje</div>
+      <div style="display: flex; flex-direction: column; gap: 7px;">
+        <div class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22402e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"></path></svg><div>powierzchnia całkowita 120,05 m²</div></div><div class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22402e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"></path></svg><div>technologia prefabrykowanych elementów betonowych</div></div><div class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22402e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"></path></svg><div>wykończony pod klucz, gotowy do zamieszkania</div></div><div class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22402e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"></path></svg><div>4 pokoje</div></div><div class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22402e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"></path></svg><div>garaż jednostanowiskowy z pomieszczeniem technicznym i przejściem do części mieszkalnej</div></div><div class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22402e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"></path></svg><div>miejsce postojowe przed garażem</div></div><div class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22402e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"></path></svg><div>strych z wejściem na rzeczy sezonowe</div></div><div class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22402e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"></path></svg><div>prywatny ogród z tarasem</div></div><div class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22402e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"></path></svg><div>ogrzewanie podłogowe</div></div><div class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22402e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"></path></svg><div>pompa ciepła VAILLANT</div></div><div class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22402e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"></path></svg><div>rekuperacja AWENTA PRO</div></div><div class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22402e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"></path></svg><div>klimatyzacja BOSCH w salonie i w każdej sypialni</div></div><div class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22402e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"></path></svg><div>dach z blachy na rąbek stojący</div></div><div class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22402e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"></path></svg><div>ogrodzona posesja: brama na pilota, furtka, domofon</div></div><div class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22402e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"></path></svg><div>system monitoringu</div></div><div class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22402e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"></path></svg><div>wyrównana działka z założonym trawnikiem</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer"><div>Adrianna Lidzbarska &nbsp;·&nbsp; +48 727 926 639 &nbsp;·&nbsp; adrianna@lidzbarska.pl &nbsp;·&nbsp; lidzbarska.pl</div><div>2 / 4</div></div>
+</div>
+</x-dc>
+</body>
+</html>

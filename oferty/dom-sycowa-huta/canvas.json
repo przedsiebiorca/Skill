@@ -1,0 +1,9 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "title": "1 · Okładka", "x": 0, "y": 0, "w": 794, "h": 1123, "print": "fixed" },
+    { "file": "Opis.dc.html", "title": "2 · Opis", "x": 880, "y": 0, "w": 794, "h": 1123, "print": "fixed" },
+    { "file": "Uklad.dc.html", "title": "3 · Układ pomieszczeń", "x": 1760, "y": 0, "w": 794, "h": 1123, "print": "fixed" },
+    { "file": "Lokalizacja.dc.html", "title": "4 · Położenie i kontakt", "x": 2640, "y": 0, "w": 794, "h": 1123, "print": "fixed" }
+  ],
+  "launch": { "view": "canvas" }
+}

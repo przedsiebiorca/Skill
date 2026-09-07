@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <style>
+  body { margin: 0; background: #e8e4dc; font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, Helvetica, Arial, sans-serif; color: #1c1a17; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  a { color: #22402e; text-decoration: none; } a:hover { color: #163020; }
+  .page { font-size: 15.5px; font-variant-numeric: lining-nums; position: relative; width: 794px; height: 1123px; box-sizing: border-box; background: #f7f4ee; overflow: hidden; padding: 52px 56px 48px 56px; display: flex; flex-direction: column; }
+  .serif { font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; }
+  .eyebrow { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #22402e; font-weight: 600; }
+  .topbar { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 1px solid #22402e; }
+  .brand { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; font-weight: 600; letter-spacing: 0.04em; color: #22402e; }
+  .brand span { font-weight: 500; font-style: italic; }
+  .h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: 50px; line-height: 1.06; margin: 0; letter-spacing: -0.01em; text-wrap: pretty; }
+  .h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: 34px; line-height: 1.1; margin: 0; letter-spacing: -0.005em; }
+  .h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 22px; line-height: 1.2; margin: 0; }
+  .lead { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 21px; line-height: 1.4; font-style: italic; color: #3a3631; margin: 0; }
+  .body { font-size: inherit; line-height: 1.55; margin: 0; text-wrap: pretty; }
+  .small { font-size: 12px; line-height: 1.45; color: #5d5850; }
+  .rule { height: 1px; background: #d9d3c7; }
+  .photo { background: #dfe3d8; border: 1px solid #c9d0c1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #55634f; box-sizing: border-box; }
+  .photo .cap { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; }
+  .stat { display: flex; flex-direction: column; gap: 2px; }
+  .stat .v { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 34px; font-weight: 600; line-height: 1; color: #1c1a17; }
+  .stat .l { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #5d5850; }
+  .row { display: flex; justify-content: space-between; gap: 16px; padding: 7px 0; border-bottom: 1px solid #e4dfd4; font-size: 15px; line-height: 1.35; }
+  .row .n { flex: 1; } .row .a { font-weight: 500; white-space: nowrap; }
+  .row.sum { border-bottom: 0; border-top: 1px solid #22402e; font-weight: 600; margin-top: 4px; }
+  .check { display: flex; gap: 10px; align-items: flex-start; font-size: 14.5px; line-height: 1.4; }
+  .check svg { flex: none; margin-top: 3px; }
+  .box { background: #22402e; color: #f7f4ee; padding: 22px 26px; box-sizing: border-box; }
+  .box .eyebrow { color: #b9c9b4; }
+  .footer { margin-top: auto; padding-top: 12px; border-top: 1px solid #d9d3c7; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #5d5850; letter-spacing: 0.04em; }
+</style>
+</helmet>
+<div class="page">
+  <div class="topbar"><div class="brand">Lidzbarska <span>Nieruchomości</span></div><div class="small" style="letter-spacing: 0.1em; text-transform: uppercase;">Oferta nr D/0001 · Sprzedaż · Dom</div></div>
+  <div style="margin-top: 28px;"><div class="photo" style="height: 400px; "><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#55634f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="1.5"></rect><circle cx="9" cy="10" r="1.6"></circle><path d="M21 16l-5-5-8 8"></path></svg><div class="cap">Zdjęcie główne (zdjęcie 1 z oferty)</div></div></div>
+  <div style="margin-top: 34px; display: flex; flex-direction: column; gap: 14px;">
+    <div class="eyebrow">Sycowa Huta · Kaszuby · woj. pomorskie</div>
+    <h1 class="h1">Las z dwóch stron. Pięć jezior.<br>Gotowy dom na&nbsp;Kaszubach.</h1>
+    <p class="lead">Dom premium wykończony pod klucz, ok. 7 minut od centrum Kościerzyny i&nbsp;około godziny od&nbsp;Gdańska.</p>
+  </div>
+  <div style="margin-top: 30px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; padding: 22px 0; border-top: 1px solid #22402e; border-bottom: 1px solid #d9d3c7;">
+    <div class="stat"><div class="v">120,05</div><div class="l">m² powierzchni</div></div>
+    <div class="stat"><div class="v">580</div><div class="l">m² działki</div></div>
+    <div class="stat"><div class="v">4</div><div class="l">pokoje</div></div>
+    <div class="stat"><div class="v">2</div><div class="l">łazienki</div></div>
+    <div class="stat"><div class="v">2026</div><div class="l">rok budowy</div></div>
+  </div>
+  <div style="margin-top: 22px; display: flex; justify-content: space-between; align-items: flex-end;">
+    <div>
+      <div class="eyebrow">Cena</div>
+      <div class="serif" style="font-size: 44px; font-weight: 600; line-height: 1.05; margin-top: 4px;">1 400 000 zł <span style="font-size: 20px; font-weight: 500; font-style: italic; color: #5d5850;">brutto</span></div>
+    </div>
+    <div style="text-align: right; font-size: 14px; line-height: 1.45; color: #3a3631;">Kupujący nie płaci prowizji.<br>Możliwość zakupu w systemie płatności ratalnej.</div>
+  </div>
+  <div class="footer"><div>Adrianna Lidzbarska &nbsp;·&nbsp; +48 727 926 639 &nbsp;·&nbsp; adrianna@lidzbarska.pl &nbsp;·&nbsp; lidzbarska.pl</div><div>1 / 4</div></div>
+</div>
+</x-dc>
+</body>
+</html>
