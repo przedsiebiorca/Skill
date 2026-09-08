@@ -4,6 +4,7 @@ z tych samych fragmentów treści. Uruchom: python3 build.py"""
 import os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 W, H = 794, 1123  # A4 @ 96 dpi
+NO_PHOTOS = "--no-photos" in sys.argv  # wariant bez pól na zdjęcia
 
 FONTS = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">'
 
@@ -42,6 +43,8 @@ ICON_PHOTO = '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke
 CHECK = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22402e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"></path></svg>'
 
 def photo(h, cap, extra=""):
+    if NO_PHOTOS:
+        return ""
     return f'<div class="photo" style="height: {h}px; {extra}">{ICON_PHOTO}<div class="cap">{cap}</div></div>'
 
 def topbar(right):
@@ -64,12 +67,13 @@ P1 = f"""
 <div class="page">
   {topbar("Oferta nr D/0001 · Sprzedaż · Dom")}
   <div style="margin-top: 28px;">{photo(400, "Zdjęcie główne (zdjęcie 1 z oferty)")}</div>
-  <div style="margin-top: 34px; display: flex; flex-direction: column; gap: 14px;">
+  <div style="margin-top: {"auto" if NO_PHOTOS else "34px"}; display: flex; flex-direction: column; gap: {"20px" if NO_PHOTOS else "14px"};">
     <div class="eyebrow">Sycowa Huta · Kaszuby · woj. pomorskie</div>
-    <h1 class="h1">Las z dwóch stron. Pięć jezior.<br>Gotowy dom na&nbsp;Kaszubach.</h1>
-    <p class="lead">Dom premium wykończony pod klucz, ok. 7 minut od centrum Kościerzyny i&nbsp;około godziny od&nbsp;Gdańska.</p>
+    <h1 class="h1" style="{"font-size: 66px;" if NO_PHOTOS else ""}">Las z dwóch stron.<br>Pięć jezior.<br>Gotowy dom na&nbsp;Kaszubach.</h1>
+    <p class="lead" style="{"font-size: 24px; max-width: 560px;" if NO_PHOTOS else ""}">Dom premium wykończony pod klucz, ok. 7 minut od centrum Kościerzyny i&nbsp;około godziny od&nbsp;Gdańska.</p>
+    {'<div style="display: flex; flex-direction: column; gap: 6px; margin-top: 8px; font-size: 15px; color: #3a3631;"><div>Posesja graniczy z lasem od frontu i od strony ogrodu.</div><div>Pięć jezior w promieniu 2 km, połączonych rzeką Trzebiochą.</div><div>Pompa ciepła, rekuperacja, klimatyzacja i ogrzewanie podłogowe.</div></div>' if NO_PHOTOS else ""}
   </div>
-  <div style="margin-top: 30px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; padding: 22px 0; border-top: 1px solid #22402e; border-bottom: 1px solid #d9d3c7;">
+  <div style="margin-top: {"auto" if NO_PHOTOS else "30px"}; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; padding: 22px 0; border-top: 1px solid #22402e; border-bottom: 1px solid #d9d3c7;">
     <div class="stat"><div class="v">120,05</div><div class="l">m² powierzchni</div></div>
     <div class="stat"><div class="v">580</div><div class="l">m² działki</div></div>
     <div class="stat"><div class="v">4</div><div class="l">pokoje</div></div>
@@ -109,13 +113,10 @@ FEATURES = [
 P2 = f"""
 <div class="page">
   {topbar("Opis nieruchomości")}
-  <div style="margin-top: 26px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
-    {photo(136, "Zdjęcie 2 z oferty")}
-    {photo(136, "Zdjęcie 3 z oferty")}
-  </div>
-  <h2 class="h2" style="margin-top: 22px;">Są lokalizacje, których nie da się odtworzyć.</h2>
-  <div style="margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; font-size: 14.5px;">
-    <div style="display: flex; flex-direction: column; gap: 10px;">
+  {'' if NO_PHOTOS else '<div style="margin-top: 26px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">' + photo(136, "Zdjęcie 2 z oferty") + photo(136, "Zdjęcie 3 z oferty") + '</div>'}
+  <h2 class="h2" style="margin-top: {"36px" if NO_PHOTOS else "22px"};">Są lokalizacje, których nie da się odtworzyć.</h2>
+  <div style="margin-top: {"24px" if NO_PHOTOS else "16px"}; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; font-size: {"15.5px" if NO_PHOTOS else "14.5px"};">
+    <div style="display: flex; flex-direction: column; gap: {"14px" if NO_PHOTOS else "10px"};">
       <p class="body">Nie dlatego, że są daleko od cywilizacji. Wręcz przeciwnie – pozwalają każdego dnia korzystać z bliskości natury, nie rezygnując z wygody miasta.</p>
       <p class="body">Ten wyjątkowy dom położony jest w Sycowej Hucie, zaledwie ok. 7 minut od centrum Kościerzyny i ok. godziny od Gdańska. Od frontu oraz od strony prywatnego ogrodu i tarasu posesja graniczy z lasem, zapewniając mieszkańcom poczucie prywatności i zielony widok przez cały rok.</p>
       <p class="body">Sycowa Huta leży w sercu Pojezierza Kaszubskiego. W najbliższym otoczeniu znajduje się pięć jezior – Sudomie, Mielnica, Żołnowo, Sominko i Osuszno – połączonych rzeką Trzebiochą, tworzących system wodny ceniony przez miłośników kajakarstwa, żeglarstwa i aktywnego wypoczynku.</p>
@@ -125,7 +126,7 @@ P2 = f"""
     </div>
     <div>
       <div class="eyebrow" style="margin-bottom: 12px;">Najważniejsze informacje</div>
-      <div style="display: flex; flex-direction: column; gap: 7px;">
+      <div style="display: flex; flex-direction: column; gap: {"10px" if NO_PHOTOS else "7px"};">
         {"".join(check(f) for f in FEATURES)}
       </div>
     </div>
@@ -208,11 +209,12 @@ P4 = f"""
     </div>
     <div style="display: flex; flex-direction: column; gap: 14px;">
       {photo(170, "Zdjęcie 4 z oferty (ogród / las)")}
-      <h3 class="h3">Dom do życia. Miejsce na odpoczynek.</h3>
-      <p class="body" style="font-size: 14.5px;">Dla osób, które chcą mieszkać w otoczeniu natury, nie rezygnując z wygody i bliskości miasta. Sprawdzi się też jako second home na Kaszubach.</p>
+      <h3 class="h3" style="{"margin-top: 26px;" if NO_PHOTOS else ""}">Dom do życia. Miejsce na odpoczynek.</h3>
+      <p class="body" style="font-size: {"15.5px" if NO_PHOTOS else "14.5px"};">Dla osób, które chcą mieszkać w otoczeniu natury, nie rezygnując z wygody i bliskości miasta. Sprawdzi się też jako second home na Kaszubach – miejsce, do którego można uciec od miejskiego tempa.</p>
+      {'<p class="body" style="font-size: 15.5px;">Dom stoi w spokojnej części Sycowej Huty, z dojazdem bezpośrednio z drogi publicznej. Od pierwszego dnia można cieszyć się jego komfortem – bez remontów i wykańczania.</p>' if NO_PHOTOS else ""}
     </div>
   </div>
-  <div style="margin-top: 24px; display: grid; grid-template-columns: 1.15fr 1fr; gap: 20px;">
+  <div style="margin-top: {"32px" if NO_PHOTOS else "24px"}; display: grid; grid-template-columns: 1.15fr 1fr; gap: 20px;">
     <div class="box" style="display: flex; flex-direction: column; gap: 10px;">
       <div class="eyebrow">Cena</div>
       <div class="serif" style="font-size: 40px; font-weight: 600; line-height: 1;">1 400 000 zł <span style="font-size: 18px; font-weight: 500; font-style: italic;">brutto</span></div>
@@ -227,9 +229,9 @@ P4 = f"""
       <div style="font-size: 15px;">lidzbarska.pl</div>
     </div>
   </div>
-  <div style="margin-top: 18px;">
+  <div style="margin-top: {"36px" if NO_PHOTOS else "18px"};">
     <h3 class="h3">Indywidualna prezentacja</h3>
-    <p class="body" style="margin-top: 6px; font-size: 14.5px;">Zakup domu to jedna z najważniejszych decyzji, dlatego warto zobaczyć tę nieruchomość osobiście. Z przyjemnością oprowadzę Państwa po domu, przedstawię jego układ i zastosowane rozwiązania techniczne oraz odpowiem na wszystkie pytania. Zapraszam do kontaktu i umówienia terminu spotkania.</p>
+    <p class="body" style="margin-top: 6px; font-size: {"15.5px" if NO_PHOTOS else "14.5px"};">Zakup domu to jedna z najważniejszych decyzji, dlatego warto zobaczyć tę nieruchomość osobiście. Z przyjemnością oprowadzę Państwa po domu, przedstawię jego układ i zastosowane rozwiązania techniczne oraz odpowiem na wszystkie pytania. Zapraszam do kontaktu i umówienia terminu spotkania.</p>
   </div>
   <p class="small" style="margin-top: 16px; font-size: 11.5px;">Przedstawiona oferta ma charakter poglądowy i może zawierać uproszczenia lub błędy. Niniejsze ogłoszenie nie stanowi oferty w rozumieniu art. 66 § 1 Kodeksu cywilnego. Współpracujemy z innymi biurami nieruchomości.</p>
   {footer(4)}
@@ -256,9 +258,10 @@ DC = """<!doctype html>
 </html>
 """
 
-for name, html in PAGES:
-    with open(os.path.join(HERE, f"{name}.dc.html"), "w", encoding="utf-8") as f:
-        f.write(DC % (FONTS, CSS, html.strip()))
+if not NO_PHOTOS:
+    for name, html in PAGES:
+        with open(os.path.join(HERE, f"{name}.dc.html"), "w", encoding="utf-8") as f:
+            f.write(DC % (FONTS, CSS, html.strip()))
 
 PRINT = """<!doctype html>
 <html lang="pl">
@@ -281,6 +284,7 @@ PRINT = """<!doctype html>
 fonts_head = FONTS
 if "--fonts" in sys.argv:
     fonts_head = "<style>" + open(sys.argv[sys.argv.index("--fonts") + 1], encoding="utf-8").read() + "</style>"
-with open(os.path.join(HERE, "dom-sycowa-huta-druk.html"), "w", encoding="utf-8") as f:
+OUT = "dom-sycowa-huta-druk-bez-zdjec.html" if NO_PHOTOS else "dom-sycowa-huta-druk.html"
+with open(os.path.join(HERE, OUT), "w", encoding="utf-8") as f:
     f.write(PRINT % (fonts_head, CSS, "\n".join(h.strip() for _, h in PAGES)))
 print("ok")
